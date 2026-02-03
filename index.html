@@ -62,6 +62,20 @@
 
   <div id="output"></div>
 
+  <hr style="margin:40px 0;">
+
+<h2>Portal List</h2>
+<p>This section will let you add, save, load, and manage your portals.</p>
+
+<div id="portalSection">
+  <button onclick="addPortal()">Add Portal</button>
+  <button onclick="downloadPortals()">Download Portals</button>
+  <button onclick="document.getElementById('portalFile').click()">Upload Portals</button>
+  <input type="file" id="portalFile" accept=".txt,.json" style="display:none" onchange="uploadPortals(event)">
+  
+  <div id="portalTable" style="margin-top:20px;"></div>
+</div>
+
 <script src="script.js"></script>
 
 </body>
