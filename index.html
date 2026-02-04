@@ -1,48 +1,39 @@
 <!DOCTYPE html>
+<!-- tailwindcss -->
 <html>
 <head>
-  <title>Nether Portal Calculator</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.tailwindcss.com"></script> <!--Activates Tailwind CSS-->
+  <title>Nether Portal Calculator</title> <!-- Tab Title -->
+  <meta name="description" content="Nether Portal Calculator">
+  <meta name="keywords" content="minecraft, nether portal, calculator, coordinates">
+  <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Layout scale on phone -->
+  <meta charset="UTF-8"> <!-- Character Set -->
+  <link href="src/output.css" rel="stylesheet"> <!-- Link to CSS file -->
 </head>
-<body>
 
-  <h1>Nether Portal Calculator</h1>
+<body class="bg-gray-900 text-gray-100 min-h-screen">
+  <div class="bg-gray-800 p-4 rounded">
+    </div>
+  <!-- Title -->
+  <h1 class="text-red-600 text-4xl">Test</h1>
 
-  <label>X Coordinate</label>
-  <input id="x" type="number">
+  <!-- Website Menu/Tab Pages -->
 
-  <label>Y Coordinate</label>
-  <input id="y" type="number">
+  <!-- Portal Add -->
 
-  <label>Z Coordinate</label>
-  <input id="z" type="number">
+  <!-- Portal List -->
 
-  <label>Dimension</label>
-  <select id="dimension">
-    <option value="overworld">Overworld</option>
-    <option value="nether">Nether</option>
-  </select>
+  <div class="bg-gray-800 p-4 rounded">
+    <button class="bg-purple-700 hover:bg-purple-600 text-white px-4 py-2 rounded">
+      Convert
+    </button>
+  </div>
 
-  <button onclick="calculate()">Convert Coordinates</button>
+  <div class="bg-gray-800 p-4 rounded border border-gray-700">
+    <h2 class="text-purple-600 text-xl font-semibold">Portal Input</h2>
+  </div>
 
-  <div id="output"></div>
-
-  <hr style="margin:40px 0;">
-
-<h2>Portal List</h2>
-<p>This section will let you add, save, load, and manage your portals.</p>
-
-<div id="portalSection">
-  <button onclick="addPortal()">Add Portal</button>
-  <button onclick="downloadPortals()">Download Portals</button>
-  <button onclick="document.getElementById('portalFile').click()">Upload Portals</button>
-  <input type="file" id="portalFile" accept=".txt,.json" style="display:none" onchange="uploadPortals(event)">
-  
-  <div id="portalTable" style="margin-top:20px;"></div>
-</div>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 
 </body>
 </html>
