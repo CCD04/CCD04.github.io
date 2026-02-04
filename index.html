@@ -8,6 +8,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Layout scale on phone -->
   <meta charset="UTF-8"> <!-- Character Set -->
   <link href="src/output.css" rel="stylesheet"> <!-- Link to CSS file -->
+  <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body class="bg-gray-900 text-gray-100 min-h-screen">
@@ -82,7 +84,8 @@
 
             </div>
           </div>
-
+          
+          <!-- Coordinates -->
           <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
 
             <!-- X Input -->
@@ -126,7 +129,7 @@
           <h2 class="text-2xl font-semibold text-purple-300 mb-6 text-center">
             Output
           </h2>
-
+          <!-- Content -->
           <div class="space-y-6">
 
             <!-- Estimated Travel Location -->
@@ -190,16 +193,91 @@
   </section>
 
   <!-- Portal List -->
+  <!-- Portal List Section -->
+  <section class="w-full px-4 mt-10 pb-16">
+    <div class="w-full max-w-6xl mx-auto flex flex-col items-center gap-4">
 
-  <div class="bg-gray-800 p-4 rounded">
-    <button class="bg-purple-700 hover:bg-purple-600 text-white px-4 py-2 rounded">
-      Convert
-    </button>
-  </div>
+      <!-- ===== PORTAL CARD TEMPLATE (repeat for each portal) ===== -->
+      <div class="relative w-full">
 
-  <div class="bg-gray-800 p-4 rounded border border-gray-700">
-    <h2 class="text-purple-600 text-xl font-semibold">Portal Input</h2>
-  </div>
+        <!-- Card -->
+        <div class="bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-xl p-4 shadow-lg w-full
+                    flex flex-row items-center gap-6 whitespace-normal overflow-x-auto justify-center">
+
+          <!-- Portal Name -->
+          <div class="flex flex-col">
+            <label class="text-gray-400 text-xs">Portal Name</label>
+            <input type="text"
+                  value="Home"
+                  class="bg-gray-900 border border-gray-700 rounded-lg px-2 py-1 text-gray-100 w-32
+                          focus:border-purple-400 focus:ring-1 focus:ring-purple-400 outline-none">
+          </div>
+
+          <!-- Destination -->
+          <div class="flex flex-col">
+            <label class="text-gray-400 text-xs">Destination</label>
+            <input type="text"
+                  value="Nether Base"
+                  class="bg-gray-900 border border-gray-700 rounded-lg px-2 py-1 text-gray-100 w-32
+                          focus:border-purple-400 focus:ring-1 focus:ring-purple-400 outline-none">
+          </div>
+
+          <!-- Portal Location -->
+          <div class="flex flex-col">
+            <label class="text-gray-400 text-xs">Portal Loc</label>
+            <div class="flex flex-row gap-2">
+              <input type="number" value="-82"
+                    class="bg-gray-900 border border-gray-700 rounded-lg px-2 py-1 text-gray-100 w-16
+                            focus:border-purple-400 focus:ring-1 focus:ring-purple-400 outline-none">
+              <input type="number" value="63"
+                    class="bg-gray-900 border border-gray-700 rounded-lg px-2 py-1 text-gray-100 w-16
+                            focus:border-purple-400 focus:ring-1 focus:ring-purple-400 outline-none">
+              <input type="number" value="7"
+                    class="bg-gray-900 border border-gray-700 rounded-lg px-2 py-1 text-gray-100 w-16
+                            focus:border-purple-400 focus:ring-1 focus:ring-purple-400 outline-none">
+
+              <select class="bg-gray-900 border border-gray-700 rounded-lg px-2 py-1 text-gray-100
+                            focus:border-purple-400 focus:ring-1 focus:ring-purple-400 outline-none">
+                <option selected>Overworld</option>
+                <option>Nether</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Travel Location (read-only) -->
+          <div class="flex flex-col">
+            <label class="text-gray-400 text-xs">Travel Loc</label>
+            <span class="text-gray-100">-11 / 63 / 0 (Nether)</span>
+          </div>
+
+          <!-- Closest Portal (read-only) -->
+          <div class="flex flex-col">
+            <label class="text-gray-400 text-xs">Closest</label>
+            <span class="text-gray-100">Nether Base (4.24)</span>
+          </div>
+
+        </div>
+
+        <!-- Move Arrow -->
+        <button class="absolute left-2 top-1/2 -translate-y-1/2 text-gray-400 hover:text-purple-300 px-2">
+          ↑↓
+        </button>
+        <!-- Delete Arrow -->
+        <button class="absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 hover:text-purple-300 px-2">
+          X
+        </button>
+      </div>
+
+      <!-- Add Portal Button -->
+      <button class="mt-6 bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-xl 
+                    px-6 py-3 text-gray-200 hover:bg-gray-700 transition font-medium">
+        + Add Portal
+      </button>
+
+    </div>
+  </section>
+
+
 
   <script src="script.js"></script>
 
