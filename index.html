@@ -51,7 +51,7 @@
             <!-- Portal Name -->
             <div class="flex-1">
               <label class="block text-sm text-gray-400 mb-1">Portal Name</label>
-              <input type="text"
+              <input id="top-name" type="text"
                     placeholder="Optional"
                     class="w-full bg-gray-900 border border-gray-700 rounded-lg px-3 py-2 text-gray-100
                             focus:border-purple-400 focus:ring-1 focus:ring-purple-400 outline-none">
@@ -60,7 +60,7 @@
             <!-- Destination -->
             <div class="flex-1">
               <label class="block text-sm text-gray-400 mb-1">Destination</label>
-              <input type="text"
+              <input id="top-destination" type="text"
                     placeholder="Optional (Destination Portal Name)"
                     class="w-full bg-gray-900 border border-gray-700 rounded-lg px-3 py-2 text-gray-100
                             focus:border-purple-400 focus:ring-1 focus:ring-purple-400 outline-none">
@@ -72,12 +72,12 @@
           <div class="w-full mb-6">
             <div class="flex bg-gray-900 border border-gray-700 rounded-lg overflow-hidden w-full">
 
-              <button id="overworldBtn"
+              <button id="top-overworldBtn"
                       class="flex-1 px-4 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 transition">
                 Overworld
               </button>
 
-              <button id="netherBtn"
+              <button id="top-netherBtn"
                       class="flex-1 px-4 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 transition">
                 Nether
               </button>
@@ -91,7 +91,7 @@
             <!-- X Input -->
             <div class="flex-1">
               <label class="block text-sm text-gray-400 mb-1">X</label>
-              <input type="number"
+              <input id="top-x" type="number"
                     class="w-full bg-gray-900 border border-gray-700 rounded-lg px-3 py-2 text-gray-100
                             focus:border-purple-400 focus:ring-1 focus:ring-purple-400 outline-none">
             </div>
@@ -99,7 +99,7 @@
             <!-- Y Input -->
             <div class="flex-1">
               <label class="block text-sm text-gray-400 mb-1">Y</label>
-              <input type="number"
+              <input id="top-y" type="number"
                     class="w-full bg-gray-900 border border-gray-700 rounded-lg px-3 py-2 text-gray-100
                             focus:border-purple-400 focus:ring-1 focus:ring-purple-400 outline-none">
             </div>
@@ -107,13 +107,13 @@
             <!-- Z Input -->
             <div class="flex-1">
               <label class="block text-sm text-gray-400 mb-1">Z</label>
-              <input type="number"
+              <input id="top-z" type="number"
                     class="w-full bg-gray-900 border border-gray-700 rounded-lg px-3 py-2 text-gray-100
                             focus:border-purple-400 focus:ring-1 focus:ring-purple-400 outline-none">
             </div>
 
             <!-- Convert Button -->
-            <button class="md:w-auto w-full bg-purple-600 hover:bg-purple-700 text-white font-medium
+            <button id="top-convertBtn" class="md:w-auto w-full bg-purple-600 hover:bg-purple-700 text-white font-medium
                           py-2 px-6 rounded-lg transition">
               Convert
             </button>
@@ -192,10 +192,40 @@
     </div>
   </section>
 
+<!-- Import / Export / Reset Controls -->
+<div class="w-full flex justify-center mt-10 mb-6">
+  <div class="flex flex-row items-center gap-6">
+
+    <!-- Import Button -->
+    <label class="bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-xl 
+                   px-6 py-3 text-gray-200 hover:bg-gray-700 transition cursor-pointer">
+      Import Portals
+      <input type="file" id="importFile" class="hidden" accept=".txt" />
+    </label>
+
+    <!-- Export Button -->
+    <button id="exportBtn"
+      class="bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-xl 
+             px-6 py-3 text-gray-200 hover:bg-gray-700 transition">
+      Export Portals
+    </button>
+
+    <!-- Reset Button -->
+    <button id="resetBtn"
+      class="bg-red-800/60 backdrop-blur-sm border border-red-700 rounded-xl 
+             px-6 py-3 text-red-200 hover:bg-red-700 transition">
+      Reset Portals
+    </button>
+
+  </div>
+</div>
+
+
+
   <!-- Portal List -->
   <!-- Portal List Section -->
   <section class="w-full px-4 mt-10 pb-16">
-    <div class="w-full max-w-6xl mx-auto flex flex-col items-center gap-4">
+    <div id="portalList"class="w-full max-w-7xl mx-auto flex flex-col items-center gap-4">
 
       <!-- ===== PORTAL CARD TEMPLATE (repeat for each portal) ===== -->
       <div class="relative w-full">
