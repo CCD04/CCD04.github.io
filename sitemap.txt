@@ -1,2 +1,2 @@
-https://ccd04.github.io/
-https://ccd04.github.io/how-it-works
+https://ccd04.github.io/index.html
+https://ccd04.github.io/how-it-works.html
